@@ -1,0 +1,5 @@
+---
+
+- name: show ansible_distribution_version
+  debug:
+    var: ansible_os_family

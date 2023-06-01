@@ -1,0 +1,18 @@
+[all:children]
+etcd_cluster
+pgsql_cluster
+
+[etcd_cluster]
+etcd01 ansible_host=192.168.122.12 hostname=etcd01
+etcd02 ansible_host=192.168.122.13 hostname=etcd02
+etcd03 ansible_host=192.168.122.14 hostname=etcd03
+
+[pgsql_cluster:children]
+pg_master
+pg_replica
+
+[pg_master]
+pgsql01 ansible_host=192.168.122.10 hostname=pgsql01
+
+[pg_replica]
+pgsql02 ansible_host=192.168.122.11 hostname=pgsql02

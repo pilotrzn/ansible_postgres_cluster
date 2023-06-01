@@ -1,0 +1,14 @@
+---
+
+- name: Start Playbook
+  become: yes
+  gather_facts: yes
+  become_method: sudo
+  any_errors_fatal: true
+  hosts: all
+  vars_files:
+    - vars/.secret.yml
+
+- import_playbook: pb_setup.yml
+
+
